@@ -9,7 +9,7 @@
  *Author linked node
  *This class implements a singly linked node using templates
  *to represent an author
- *Each nodes the following attributes:
+ *Each node has the following attributes:
 	-fName: stores the first name of an author
 	-lName: stores the last name of an author
 	-next: a pointer to the next author in the list
