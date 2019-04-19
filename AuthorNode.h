@@ -32,13 +32,13 @@ template <class T>
 class AuthorNode{
 public:
 	AuthorNode(); //Default constructor
-	AuthorNode(T, AuthorNode<T>*); //Special constructor
+	AuthorNode(T, T, AuthorNode<T>*); //Special constructor
 	T getFName(); //get author's first name
 	T getLName(); //get author's last name
 	AuthorNode<T>* getNext(); // getNext Author
 	void setFName(T); //set author's first name
 	void setLName(T); //set author's last name
-	void setNext(IntSLLNode<T> *); //Set next Author
+	void setNext(AuthorNode<T> *); //Set next Author
 private:
 	T fName; //Author's first name
 	T lName; //Author's last name
@@ -68,7 +68,7 @@ AuthorNode<T>::AuthorNode(){
 template <class T>
 AuthorNode<T>::AuthorNode(T first, T last, AuthorNode<T> *n = 0){ 
 	fName = first;
-	LName = last;
+	lName = last;
 	next = n;
 }
 
@@ -100,7 +100,7 @@ AuthorNode<T> *AuthorNode<T>::getNext(){
  *This method will set first as the fName attribute
 */
 template <class T>
-void AuthorNode<T>::setFNAME(T first){
+void AuthorNode<T>::setFName(T first){
 	fName = first;
 }
 
@@ -108,7 +108,7 @@ void AuthorNode<T>::setFNAME(T first){
  *This method will set last as the lName attribute
 */
 template <class T>
-void AuthorNode<T>::setLNAME(T last){
+void AuthorNode<T>::setLName(T last){
 	lName = last;
 }
 
