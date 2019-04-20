@@ -40,6 +40,7 @@ public:
 	void sortInsert(T, T, AuthorList<T> *, T, int); //Insert a new book in the list alphabetically by title
 	void printList(); //Prints out all the books in order
 	void printRevList(); //Prints out all the books in reverse order
+	BookNode<T>* findBook(T); //find a book that matches the parameter
 
 private:
 	BookNode<T> *head; //A pointer to the first book
@@ -258,4 +259,24 @@ void BookList<T>::printRevList(){
 		cout<<"editor: "<<temp->getEditor()<<endl;
 		cout<<"year: "<<temp->getYear()<<endl; 
 	}
+}
+
+/*
+ *This method will return a pointer to a book that mathches the search criteria
+ *@params:
+	-bookTitle: title of book to be searched
+*/
+template <class T>
+BookNode<T>* BookList<T>::findBook(T bookTitle){
+	BookNode<T> *book = 0;
+	if(head != 0){
+		BookNode<T> *temp;
+		temp = head;
+		while(temp->getNext() != head && temp->getTitle() != bookTitle){
+			temp = temp->getNext();
+		}
+		if(temp->getTitle() == bookTitle)
+			book = temp;
+	}
+	return book;
 }
