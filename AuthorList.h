@@ -182,13 +182,13 @@ void AuthorList<T>::sortInsert(T first, T last){
 		}
 		//if the first pointer is equal to tail and the @param last is more than
 		//the value at tail add a new node with lName last at the end of list
-		if((curr == tail) && (last > curr->getLName())){
+		if((curr == tail) && (last >= curr->getLName())){
 			addToTail(first, last);
 		}else{
 			//if the first pointer is at head and the @param last is less
 			//than the value at that node then add a new author at the beginning
 			//of the list
-			if((curr == head) && (last < curr->getLName())){
+			if((curr == head) && (last <= curr->getLName())){
 				addToHead(first, last);
 			}else {
 				//else the sorted position is somewhere in between head
@@ -213,6 +213,7 @@ void AuthorList<T>::printList(){
 		cout<<curr->getFName()<<" - ";
 		curr = curr->getNext();
 	}
+	cout<<endl;
 }
 
 /*
