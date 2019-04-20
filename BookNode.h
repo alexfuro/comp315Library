@@ -24,7 +24,6 @@
  *include necesarry libraries 
  *and set name space
 */
-//#include "AuthorList.h"
 #include <iostream>
 using namespace std;
 /*
