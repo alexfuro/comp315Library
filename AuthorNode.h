@@ -35,14 +35,14 @@ public:
 	AuthorNode(T, T, AuthorNode<T>*); //Special constructor
 	T getFName(); //get author's first name
 	T getLName(); //get author's last name
-	AuthorNode<T>* getNext(); // getNext Author
+	AuthorNode<T>* getNext(); // get next Author
 	void setFName(T); //set author's first name
 	void setLName(T); //set author's last name
 	void setNext(AuthorNode<T> *); //Set next Author
 private:
 	T fName; //Author's first name
 	T lName; //Author's last name
-	AuthorNode<T> *next; //Points to the next node in the list
+	AuthorNode<T> *next; //Points to the next author node in the list
 };
 
 
