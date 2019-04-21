@@ -247,17 +247,19 @@ void BookList<T>::printRevList(){
 	if(temp != 0){
 		while (temp->getPrev() !=head){
 			temp=temp->getPrev();
-			cout<<"title: "<<temp->getTitle()<<endl;
-			cout<<"plot: "<<temp->getPlot()<<endl;
-			cout<<"authors : "<<temp->getAuthors()->printList()<<endl;
-			cout<<"editor: "<<temp->getEditor()<<endl;
-			cout<<"year: "<<temp->getYear()<<endl; 
+			cout<<"\ttitle: "<<temp->getTitle()<<endl;
+			cout<<"\tplot: "<<temp->getPlot()<<endl;
+			cout<<"\tauthors : ";
+			temp->getAuthors()->printList();
+			cout<<"\teditor: "<<temp->getEditor()<<endl;
+			cout<<"\tyear: "<<temp->getYear()<<endl; 
 		}
-		cout<<"title: "<<temp->getTitle()<<endl;
-		cout<<"plot: "<<temp->getPlot()<<endl;
-		cout<<"authors : "<<temp->getAuthors()->printList()<<endl;
-		cout<<"editor: "<<temp->getEditor()<<endl;
-		cout<<"year: "<<temp->getYear()<<endl; 
+		cout<<"\ttitle: "<<temp->getTitle()<<endl;
+		cout<<"\tplot: "<<temp->getPlot()<<endl;
+		cout<<"\tauthors : ";
+		temp->getAuthors()->printList();
+		cout<<"\teditor: "<<temp->getEditor()<<endl;
+		cout<<"\tyear: "<<temp->getYear()<<endl; 
 	}
 }
 
