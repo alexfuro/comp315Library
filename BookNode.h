@@ -71,9 +71,7 @@ BookNode<T>::BookNode(){
 
 /*
  *Special constructor:
- *Creates a book with value bookTitle in the title attribute
- *bookPlot in the plot attribute
- *and next pointing to null
+ *Creates a book with attribues equal to the parameter values received
  *@params:
 	*p: pointer to the previous node		
 	bookTitle: the book's title to be store
@@ -153,6 +151,8 @@ BookNode<T>* BookNode<T>::getPrev(){
 
 /*
  *This method will set the title attribute
+ *@params:
+	-bookTitle: the title to be stored
 */
 template <class T>
 void BookNode<T>::setTitle(T bookTitle){ 
@@ -161,6 +161,8 @@ void BookNode<T>::setTitle(T bookTitle){
 
 /*
  *This method will set the plot attribute
+*@params:
+	-bookPlot: the plot to be stored
 */
 template <class T>
 void BookNode<T>::setPlot(T bookPlot){ 
@@ -169,6 +171,8 @@ void BookNode<T>::setPlot(T bookPlot){
 
 /*
  *This method will set the editor attribute
+*@params:
+	-bookEditor: the editor to be stored
 */
 template <class T>
 void BookNode<T>::setEditor(T bookEditor){ 
@@ -177,6 +181,8 @@ void BookNode<T>::setEditor(T bookEditor){
 
 /*
  *This method will set the authors attribute
+*@params:
+	-bookAuthors: the authors to be stored
 */
 template <class T>
 void BookNode<T>::setAuthors(AuthorList<T> *bookAuthors){ 
@@ -185,6 +191,8 @@ void BookNode<T>::setAuthors(AuthorList<T> *bookAuthors){
 
 /*
  *This method will set the year attribute
+*@params:
+	-bookYear: the year to be stored
 */
 template <class T>
 void BookNode<T>::setYear(int bookYear){ 
@@ -193,6 +201,8 @@ void BookNode<T>::setYear(int bookYear){
 
 /*
  *This methods sets the next pointer to point to the next book	
+*@params:
+	-*n: the next book location to be stored
 */
 template <class T>
 void BookNode<T>::setNext(BookNode<T> *n = 0){ 
@@ -200,7 +210,9 @@ void BookNode<T>::setNext(BookNode<T> *n = 0){
 }
 
 /*
- *This methods sets the prev pointer to point to the previous book	
+ *This methods sets the prev pointer to point to the previous book
+*@params:
+	-*p: the previous book location to be stored	
 */
 template <class T>
 void BookNode<T>::setPrev(BookNode<T> *p = 0){
