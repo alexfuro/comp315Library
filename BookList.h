@@ -6,8 +6,8 @@
  *Gurabo Campus
  *School of Engineering
 
- *Books doubly linked list
- *This class implements a doubly linked list using templates
+ *Books circular doubly linked list
+ *This class implements a circular doubly linked list using templates
  *to represent a collection of books
  *Each list has one attribute:
 	-head: a pointer to the first book
@@ -23,7 +23,6 @@
 */
 
 #include "BookNode.h"
-//#include "AuthorList.h"
 template <class T>
 /*
  *Class Declaration
@@ -176,6 +175,7 @@ bool BookList<T>::isEmpty(){
 
 /*
  *This method will add a new book in ascending order to the list
+ *the list is sorted by book title
  *@params:		
 	bookTitle: the book's title to be store
 	bookPlot: the book's plot to be stored
