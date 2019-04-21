@@ -38,8 +38,8 @@ public:
 	void sortInsert(T first, T last); //creates a new author node and inserts it sorted alphabetically by last name
 	void printList(); //prints all authors in the list
 private:
-	AuthorNode<T> *head; //A pointer to the first node
-	AuthorNode<T> *tail; //A pointer to the last node
+	AuthorNode<T> *head; //A pointer to the first author node
+	AuthorNode<T> *tail; //A pointer to the last author node
 };
 
 /*
