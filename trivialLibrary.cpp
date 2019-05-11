@@ -166,6 +166,26 @@ void editBook(GenreTree<T> *genres){
 			book->setPlot(plot);
 			book->setEditor(editor);
 			book->setYear(year);
+			
+			AuthorList<string> *list = new AuthorList<string>();
+			cout<<"What are the author(s) of the book?"<<endl;
+			int addMore = 0;
+			do {
+				string first;
+				string last;
+				cout<<"Enter author's first name"<<endl;
+				cin>>first;
+				cout<<"Enter author's last name"<<endl;
+				cin>>last;
+
+				list->sortInsert(first, last);
+				cout<<"The list is"<<endl;
+				list->printList();
+				cout<<"Add another author? 1 for yes, 0 for no"<<endl;
+				cin>>addMore;
+			} while(addMore != 0);
+			book->setAuthors(list);
+
 		}else{
 			cout<<"Edit cancelled."<<endl;
 		}			
