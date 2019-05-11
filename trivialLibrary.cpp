@@ -254,12 +254,12 @@ void findBook(GenreTree<T> *genres){
 	if(book != 0){
 		cout<<"We found the book."<<endl;
 		cout<<"The details are:"<<endl;
-		cout<<"title: "<<book->getTitle()<<endl;
-		cout<<"plot: "<<book->getPlot()<<endl;
-		cout<<"authors : ";
+		cout<<"\ttitle: "<<book->getTitle()<<endl;
+		cout<<"\tplot: "<<book->getPlot()<<endl;
+		cout<<"\tauthors : ";
 		book->getAuthors()->printList();
-		cout<<"editor: "<<book->getEditor()<<endl;
-		cout<<"year: "<<book->getYear()<<endl; 
+		cout<<"\teditor: "<<book->getEditor()<<endl;
+		cout<<"\tyear: "<<book->getYear()<<endl; 
 			
 	}else{
 		cout<<"We couldn't find the book. Did you spell the title correctly?"<<endl;
