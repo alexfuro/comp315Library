@@ -220,17 +220,11 @@ void BookList<T>::printList(){
 	if(temp != 0){
 		while (temp->getNext() != head){
 			cout<<"\ttitle: "<<temp->getTitle()<<endl;
-			cout<<"\tplot: "<<temp->getPlot()<<endl;
-			cout<<"\tauthors : ";
-			temp->getAuthors()->printList();
 			cout<<"\teditor: "<<temp->getEditor()<<endl;
 			cout<<"\tyear: "<<temp->getYear()<<endl; 
 			temp=temp->getNext();
 		}
 		cout<<"\ttitle: "<<temp->getTitle()<<endl;
-		cout<<"\tplot: "<<temp->getPlot()<<endl;
-		cout<<"\tauthors : ";
-		temp->getAuthors()->printList();
 		cout<<"\teditor: "<<temp->getEditor()<<endl;
 		cout<<"\tyear: "<<temp->getYear()<<endl; 
 	}
