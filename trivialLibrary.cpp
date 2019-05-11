@@ -273,33 +273,40 @@ int main(int argc, char* argv[]){
 		printMenu();
 		cout<<"what is your choice: ";
 		cin>>choice;
-		switch(choice){
-			case 1:
-				addGenre(genres);
-				break;
-			case 2:
-				addBook(genres);
-				break;
-			case 3:
-				editBook(genres);
-				break;
-			case 4:
-				listGenres(genres);
-				break;
-			case 5:
-				listAllBooksByGenre(genres);
-				break;
-			case 6:
-				listBooksByGenre(genres);
-				break;
-			case 7:
-				findBook(genres);
-				break;
-			case 8:
-				cout<<"Goodbye!"<<endl;
-				break;
-			default:
-				cout<<"error"<<endl;
+		//check if failbit was flagged
+		if(!cin){
+			cin.clear(); //reset failbit of cin
+			choice = 0;
+			cin.ignore(); //ignore the rest of input
+		}else{		
+			switch(choice){
+				case 1:
+					addGenre(genres);
+					break;
+				case 2:
+					addBook(genres);
+					break;
+				case 3:
+					editBook(genres);
+					break;
+				case 4:
+					listGenres(genres);
+					break;
+				case 5:
+					listAllBooksByGenre(genres);
+					break;
+				case 6:
+					listBooksByGenre(genres);
+					break;
+				case 7:
+					findBook(genres);
+					break;
+				case 8:
+					cout<<"Goodbye!"<<endl;
+					break;
+				default:
+					cout<<"error"<<endl;
+			}
 		}
 	} while(choice != 8);
 	return 0;
