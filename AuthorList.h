@@ -33,7 +33,6 @@ public:
 	void addToHead(T first, T last); //Adds author to the beginning of list and sets head to new author
 	void addToTail(T first, T last); //Adds author to the end of list and sets tail to new author
 	void deleteFromHead(); //Removes author at head, sets head to next author, if only one author head and tail point to zero
-	void deleteFromTail(); //Removes author at tail, sets tail to previous author, if only one author head and tail point to zero
 	bool isEmpty(); //If the list is empty return true, otherwise return false
 	void sortInsert(T first, T last); //creates a new author node and inserts it sorted alphabetically by last name
 	void printList(); //prints all authors in the list
@@ -119,40 +118,6 @@ void AuthorList<T>::deleteFromHead(){
 			tail = 0;
 		}
 		//delete node at temp position
-		delete temp;
-	}
-}
-
-/*
- *This method will remove the author at the tail of the list
- *and will set tail to the previous author
-*/
-template <class T> 
-void AuthorList<T>::deleteFromTail(){
-	//Check if the list isn't empty
-	if(head != 0){
-		//create a temporary pointer to a node
-		//and set it to point at the same node as head
-		AuthorNode<T> *temp;
-		temp = head;
-		//check if the list has only one node
-		if(head != tail){
-			//move until temp's next is tail
-			while(temp->getNext() != tail){
-				temp = temp->getNext();
-			}
-			//set tail to temp
-			tail = temp;
-			//move to temp last node
-			temp = temp->getNext();
-			//set next of tail to null
-			tail->setNext(0);
-		}else {
-			//if there was only one node then set head
-			//and tail to point to null
-			head = tail = 0;
-		}
-		//delete that node
 		delete temp;
 	}
 }
