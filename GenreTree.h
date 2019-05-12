@@ -392,13 +392,14 @@ BookNode<T>* GenreTree<T>::findBook(T bookTitle){
 */
 template <class T>
 GenreNode<T>* GenreTree<T>::recursiveBookSearch(GenreNode<T> *node, T bookTitle){
-	GenreNode<T> *found = 0;	
+	GenreNode<T> *temp = 0;
 	if(node != 0){
-		if(node->getBooks()->findBook(bookTitle) != 0){
-			return node;
+		temp = node;
+		if(temp->getBooks()->findBook(bookTitle) != 0){
+			return temp;
 		}
-		recursiveBookSearch(node->getLeft(), bookTitle);
-		recursiveBookSearch(node->getRight(), bookTitle);
+		temp = recursiveBookSearch(node->getLeft(), bookTitle);
+		temp = recursiveBookSearch(node->getRight(), bookTitle);
 	}
-	return found;
+	return temp;
 }
