@@ -34,7 +34,6 @@ public:
 	void addToHead(T, T, AuthorList<T> *, T, int); //Create a new book at the head of list, head becomes this new book
 	void addToTail(T, T, AuthorList<T> *, T, int); //Create a new book at the end of list
 	void deleteFromHead(); //Delete book at the beginning of list, head becomes next book, if only one book head points to zero
-	void deleteFromTail(); //Delete book at the end of the list, if only one book head points to zero
 	bool isEmpty(); //Returns true if the list is empty, false otherwise
 	void sortInsert(T, T, AuthorList<T> *, T, int); //Insert a new book in the list alphabetically by title
 	void printList(); //Prints out all the books in order
@@ -134,28 +133,6 @@ void BookList<T>::deleteFromHead(){
 			head->getNext()->setPrev(head->getPrev());
 			head->getPrev()->setNext(head->getNext());
 			head = head->getNext();
-		}
-		delete temp;
-	}
-}
-
-/*
- *This method will remove the book at the end of the list
- *the head will point towards the next book
- *if there is only one book head will point to zero
-*/
-template<class T>
-void BookList<T>::deleteFromTail(){
-	//check if the list isnt empty	
-	if(head !=0){
-		BookNode<T> *temp;
-		temp = head->getPrev();
-		//check if there is only one node
-		if( head == head->getNext()){
-			head=0;
-		}else{ 
-			temp->getPrev()->setNext(head);
-			head->setPrev(temp->getPrev());
 		}
 		delete temp;
 	}
