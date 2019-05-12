@@ -399,7 +399,14 @@ GenreNode<T>* GenreTree<T>::recursiveBookSearch(GenreNode<T> *node, T bookTitle)
 			return temp;
 		}
 		temp = recursiveBookSearch(node->getLeft(), bookTitle);
+		if(temp != 0 && temp->getBooks()->findBook(bookTitle) != 0){
+			return temp;
+		}
 		temp = recursiveBookSearch(node->getRight(), bookTitle);
+		if(temp != 0 && temp->getBooks()->findBook(bookTitle) != 0){
+			return temp;
+		}
+
 	}
 	return temp;
 }
